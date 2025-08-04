@@ -1,0 +1,137 @@
+;*******************************************
+;**** Versuch Energievorhersage 2007 T4 *****
+;*******************************************
+
+;Versuch für das Traning zur Zeitreihenvorhersage mit 2007 T4
+;Rohteilmaße: 75x150x50 mm (X/Y/Z)
+;BT-KOS liegt in Xmin, Ymin und Zmax des Rohteils aus Sicht des M-KOS
+
+G90 G94 G710    ;G90: Absolute dimensioning, G94: Feed in mm/min and deg/min, G710: Metric system [mm] and [mm/min]
+
+;Ebene: 1
+;Tool: VHM 20mm
+;Tiefe 10 mm
+T="FRAESER_20" M6
+G0 X-20 Y10 Z10
+G0 Z-10 S900 M3 M8
+
+;Schritt 1 (Überschneidung 20mm)
+G1 X95 Y10 Z-10 S900 F140
+G0 Y30
+
+;Schritt 2 (Überschneidung 20mm)
+G1 X-20 Y30 Z-10 S1100 F174
+G0 Y40
+
+;Schritt 3 (Überschneidung 10mm)
+G1 X95 Y40 Z-10 S1300 F203
+G0 Y50
+
+;Schritt 4 (Überschneidung 10mm)
+G1 X-20 Y50 Z-10 S1500 F234
+G0 Y55
+
+;Schritt 5 (Überschneidung 5mm)
+G1 X95 Y55 Z-10 S1700 F265
+G0 Y60
+
+;Schritt 6 (Überschneidung 5mm)
+G1 X-20 Y60 Z-10 S1800 F281
+G0 Y65
+
+;Schritt 7 (Überschneidung 5mm)
+G1 X95 Y65 Z-10 S900 F140
+G0 Z10 M5 M9
+
+;Tool: VHM 20mm
+;Tiefe 10 mm
+G0 X10 Y170 Z10
+G0 Z-10 S900 M3 M8
+
+;Schritt 8 (Überschneidung 20mm)
+G1 X10 Y55 Z-10 S900 F140
+G0 X30
+
+;Schritt 9 (Überschneidung 20mm)
+G1 X30 Y170 Z-10 S1100 F172
+G0 X40
+
+;Schritt 10 (Überschneidung 10mm)
+G1 X40 Y55 Z-10 S1300 F203
+G0 X50
+
+;Schritt 11 (Überschneidung 10mm)
+G1 X50 Y170 Z-10 S1500 F234
+G0 X55
+
+;Schritt 12 (Überschneidung 5mm)
+G1 X55 Y55 Z-10 S1700 F265
+G0 X60
+
+;Schritt 13 (Überschneidung 5mm)
+G1 X60 Y170 Z-10 S1800 F281
+G0 X65
+
+;Schritt 14 (Überschneidung 5mm)
+G1 X65 Y55 Z-10 S1900 F296
+G0 Z10 M5 M9
+
+
+;Ebene: 2
+;Tool: VHM 10mm
+;Tiefe 5 mm
+T="FRAESER_10" M6
+G0 X32.5 Y-10 Z10
+G0 Z-15 S1850 M3 M8
+
+;Anfahren Schritt 15
+G1 X32.5 Y15 Z-15 S1850 F170
+;Schritt 15 (Überschneidung 10mm)
+G2 X32.5 Y15 I0 J35 S1850 F170
+
+;Anfahren Schritt 16
+G1 X32.5 Y25 Z-15 S2500 F230
+;Schritt 16 (Überschneidung 10mm)
+G3 X32.5 Y25 I0 J25 S2500 F230
+
+;Anfahren Schritt 17
+G1 X32.5 Y30 Z-15 S3150 F290
+;Schritt 17 (Überschneidung 5mm)
+G2 X32.5 Y30 I0 J20 S3150 F290
+
+;Anfahren Schritt 18
+G1 X32.5 Y35 Z-15 S3800 F350
+;Schritt 18 (Überschneidung 5mm)
+G3 X32.5 Y35 I0 J15 S3800 F350
+G0 Z10 M5 M9
+
+
+;Ebene: 2
+;Tool: VHM 5mm
+;Tiefe 3 mm
+T="FRAESER_5" M6
+G0 X32.5 Y185 Z10
+G0 Z-13 S3850 M3 M8
+
+;Anfahren Schritt 19
+G1 X32.5 Y160 Z-13 S3850 F154
+;Schritt 19 (Überschneidung 5mm)
+G2 X32.5 Y160 I0 J-22.5 S3850 F154
+
+;Anfahren Schritt 20
+G1 X32.5 Y155 Z-13 S5100 F204
+;Schritt 20 (Überschneidung 5mm)
+G3 X32.5 Y155 I0 J-17.5 S5100 F204
+
+;Anfahren Schritt 21
+G1 X32.5 Y152.5 Z-13 S6350 F254
+;Schritt 21 (Überschneidung 2.5mm)
+G2 X32.5 Y152.5 I0 J-15 S6350 F254
+
+;Anfahren Schritt 22
+G1 X32.5 Y150 Z-13 S7600 F304
+;Schritt 22 (Überschneidung 2.5mm)
+G3 X32.5 Y150 I0 J-12.5 S7600 F304
+G0 Z100 M5 M9
+
+M30

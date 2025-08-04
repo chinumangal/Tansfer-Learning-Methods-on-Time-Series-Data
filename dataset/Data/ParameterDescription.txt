@@ -1,0 +1,74 @@
+***************************************************************************************
+***                   Structure of the dataframes                                   ***
+***************************************************************************************
+
+Zusammenfassung: Aircut:
+pos_x - Positionssignal der X-Achse
+pos_y - Positionssignal der Y-Achse
+pos_z - Positionssignal der Z-Achse
+pos_sp - Positionssignal der SP-Achse
+curr_x - gemessenes Stromsignal der X-Achse
+curr_y - gemessenes Stromsignal der Y-Achse
+curr_z - gemessenes Stromsignal der Z-Achse
+curr_sp - gemessenes Stromsignal der SP-Achse
+v_x - abgeleitete Vorschubgeschwindigkeit X-Achse
+v_y - abgeleitete Vorschubgeschwindigkeit Y-Achse
+v_z - abgeleitete Vorschubgeschwindigkeit Z-Achse
+v_sp - abgeleitete Vorschubgeschwindigkeit SP-Achse
+a_x - abgeleitete Beschleunigung X-Achse
+a_y - abgeleitete Beschleunigung Y-Achse
+a_z - abgeleitete Beschleunigung Z-Achse
+a_sp - abgeleitete Beschleunigung SP-Achse
+
+Folgende zusätzliche Spalten im Datensatz im Prozess:
+a_x_sim - simulierte Beschleunigung der X-Achse
+a_y_sim - simulierte Beschleunigung der Y-Achse
+a_z_sim - simulierte Beschleunigung der Z-Achse
+a_sp_sim - simulierte Beschleunigung der SP-Achse
+v_x_sim - simulierte Geschwindigkeit der X-Achse
+v_y_sim - simulierte Geschwindigkeit der Y-Achse
+v_z_sim - simulierte Geschwindigkeit der Z-Achse
+v_sp_sim - simulierte Geschwindigkeit der SP-Achse
+f_x - simulierte Kräfte der X-Achse
+f_y - simulierte Kräfte der Y-Achse
+f_z - simulierte Kräfte der Z-Achse
+f_sp - simulierte Kräfte der SP-Achse
+materialremoved - Materialabtragsrate während des Prozesses
+m_sp - Moment der Spindel
+
+
+Abstract: Aircut:
+pos_x - Position signal of the X-axis
+pos_y - Position signal of the Y-axis
+pos_z - Position signal of the Z-axis
+pos_sp - position signal of the SP axis
+curr_x - measured current signal of the X-axis
+curr_y - measured current signal of the Y-axis
+curr_z - measured current signal of the Z-axis
+curr_sp - measured current signal of the SP axis
+v_x - derived feed rate X-axis
+v_y - derived feed rate Y-axis
+v_z - derived feed rate Z-axis
+v_sp - derived feed rate SP axis
+a_x - derived acceleration X-axis
+a_y - derived acceleration Y-axis
+a_z - derived acceleration Z-axis
+a_sp - derived acceleration SP axis
+
+The following additional columns in the data set in the process:
+a_x_sim - simulated acceleration der X-Achse
+a_y_sim - simulated acceleration der Y-Achse
+a_z_sim - simulated acceleration der Z-Achse
+a_sp_sim - simulated acceleration der SP-Achse
+v_x_sim - simulated speed der X-Achse
+v_y_sim - simulated speed der Y-Achse
+v_z_sim - simulated speed der Z-Achse
+v_sp_sim - simulated speed der SP-Achse
+f_x - simulated forces of the X-axis
+f_y - simulated forces of the Y-axis
+f_z - simulated forces of the Z-axis
+f_sp - simulated forces of the SP axis
+materialremoved - material removal rate during the process
+m_sp - torque of the spindle
+
+---------------------------------------------------------------------------------------

@@ -1,0 +1,104 @@
+;***********************************************
+;**** Validierung Energievorhersage S235JR *****
+;***********************************************
+
+;Versuch für die Validierung zur Zeitreihenvorhersage mit S235JR
+;Rohteilmaße: 75x150x50 mm (X/Y/Z)
+;BT-KOS liegt in Xmin, Ymin und Zmax des Rohteils aus Sicht des M-KOS
+
+G90 G94 G710    ;G90: Absolute dimensioning, G94: Feed in mm/min and deg/min, G710: Metric system [mm] and [mm/min]
+
+G57             ;Nullpkt2023/05/10
+G1 B0 F1500
+
+;Äusere Bahn
+;Tool: VHM 10mm
+;Tiefe: 5mm
+;Überschneidung 10mm
+T="FRAESER_10St" 
+M6
+G0 X37.5 Y-10 Z10
+G0 Z-5 S2000 M3 ;M8
+
+;Schritt 1
+G1 X37.5 Y10 Z-5 S2000 F360
+
+;Schritt 2
+G1 X27.5 Y10 Z-5 S2000 F360
+
+;Schritt 3
+G2 X10 Y27.5 I0 J17.5 Z-5 S2150 F387
+
+;Schritt 4
+G1 X10 Y47.5 Z-5 S2300 F414
+
+;Schritt 5
+G2 X27.5 Y65 I17.5 J0 Z-5 S2450 F441
+
+;Schritt 6
+G1 X47.5 Y65 Z-5 S2600 F468
+
+;Schritt 7
+G2 X65 Y47.5 I0 J-17.5 Z-5 S2750 F495
+
+;Schritt 8
+G1 X65 Y27.5 Z-5 S2900 F522
+
+;Schritt 9
+G2 X47.5 Y10 I-17.5 J0 Z-5 S3050 F549
+
+;Schritt 10
+G1 X37.5 Y10 Z-5 S3200 F376
+
+
+;Innere Bahn
+;Tool: VHM 10mm
+;Tiefe 5mm
+;Überschneidung 5mm
+
+;Schritt 11
+G1 X37.5 Y15 Z-5 S2000 F360
+
+;Schritt 12
+G1 X27.5 Y15 Z-5 S2000 F360
+
+;Schritt 13
+G2 X15 Y27.5 I0 J12.5 Z-5 S2150 F387
+
+;Schritt 14
+G1 X15 Y47.5 Z-5 S2300 F387
+
+;Schritt 15
+G2 X27.5 Y60 I12.5 J0 Z-5 S2450 F411
+
+;Schritt 16
+G1 X47.5 Y60 Z-5 S2600 F468
+
+;Schritt 17
+G2 X60 Y47.5 I0 J-12.5 Z-5 S2750 F495
+
+;Schritt 18
+G1 X60 Y27.5 Z-5 S2900 F522
+
+;Schritt 19
+G2 X47.5 Y15 I-12.5 J0 Z-5 S3050 F549
+
+;Schritt 20
+G1 X37.5 Y15 Z-5 S3200 F576
+
+
+;Kreuz
+;Tool: VHM 10mm
+;Tiefe: 3mm
+;Überschneidung 10mm
+
+;Schritt 21
+G1 X15 Y15 Z-5 S2400 F432
+G1 X60 Y60 Z-5 S2400 F432
+
+;Schritt 22
+G1 X15 Y60 Z-5 S3200 F576
+G1 X60 Y15 Z-5 S3200 F576
+G0 Z100 M5 ;M9
+
+M30
