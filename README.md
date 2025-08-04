@@ -18,7 +18,7 @@ Location: /dataset/Data/DMG_CMX_600V </br>
 ## Requirements
 Model requirements: </br>
 - predict the current usage of specific movements
-- predict the currecnt usage of whole CNC programs and depends further on:
+- predict the current usage of whole CNC programs and depends further on:
     - normal cut or aircut
     - material
     - machine
